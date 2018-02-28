@@ -1,0 +1,284 @@
+<?php
+// ========================数据库=================
+/**
+ * 类型
+ tinyint
+ decimal(m,n) 一般跟钱相关，m代表几位数字,n小数点
+ int整型
+ char定长 更快(指定长度，不够弥补)
+ varchar变长--可伸缩 更省(指定多长就存多长)
+ enum枚举类型(单选)
+ set类型(多选)
+ null表示没有空值
+ text长文本数据 
+ unsigned 只保存正值
+ */
+truncate table 表名//删除表的全部数据
+mysql -uroot -p //登录数据库
+show databases; //显示数据库
+create database student charset utf8; //创建数据库 设置utf8(设置utf8是让让数据库可以存中文)
+drop database student //删除数据库
+select database();//查看当前所使用的数据库
+create table student(age tinyint); //创建表
+desc student;//查看student表结构
+insert into student set age = 1;//往表里面插入数据
+drop table student;//删除学生表
+create table student( age tinyint, money decimal(5, 2));//添加表
+insert into student set age=1, money = 100; 添加两个值
+show create table student;//查看表的sql语句
+desc 表名 //显示表结构
+drop table if exists 表名 //删除表
+create table 表名(列名 类型,..)//创建表
+
+default //设置默认值, 如果没有向这个字段插入内容，将使用默认值
+unique //约束表中列唯一数据， 一个表中可以有多个字段使用unique约束(用来约束表中某个字段的唯一性)
+primay key //也是用来约束表中某个字段的唯一性，一般是id;每个表都应该有个主键,并且每个表只能有一个主键
+auto_increment 用来修饰主键，每增加一条数据就会增加1, 默认的是用从1开始
+
+create table stu like stu;//复制表结构
+insert into stu select * from stu1//复制表数据
+create table stu select * from stu1//创建表同时复制数据
+select * from 表名 //查询数据
+as //使用别名
+where //指定查询条件
+and //左右两边都成立时返回记录
+or //左右两边都有一个成立即返回记录
+concat //连接字符串 select concat(name, email) from stu;
+select age, age > 22 as bigage from stu;//查询结果自身比较， 返回值1为ture,0为false
+distinct //select distinct name from stu; 过滤重复的记录, 返回唯一结果
+is null //select * from c where age is null ;判断字段值是否为空 
+is not null//select * from c where age is not null;判断字段值是否不为空
+if(表达式, 值1, 值2)//select age, if(age>41, '大'， '小') from c; 当表达式成立时返回值1，否则返回值2
+ifnull(字段，值) //select age, ifnull(age, '空') from c;
+
+order by //select * from stu order by age desc,qq;(对age降续，对qq升续) 对查询到的结果进行排序
+desc //select * from stu order by age desc;对查询结果进行降续排序
+asc //select * from stu order by age asc; 对查询结果进行升续排序
+
+limit(n)//select * from stu order by age desc limit 1;取出部分数据记录
+limit(m,n) //取出从m开始的n条数据, m以0开始计数
+
+between 值1 and 值2//select name,age from stu where age between 22 and 55;(查找22岁到55岁之间的人) 在值1与值2区间内检索内容
+in(值1，值2...)//select name,age from stu where age in(22,35,55)(查找年龄为22或35或55的人) 检测检索值是否在in表达式指定的值当中
+
+not between 值1 and 值2//select name,age from stu where age not between 22 and 55;(查找不在22岁到55岁之间的人) 匹配不在值1与2区间内出现的值
+not in(值1， 值2...)//select name,age from stu where age not in(22,35,55)(查找年龄不为22或35或35的人) 检测检索值是不在in表达式指定的值当中
+
+like //匹配字符串(select * from c where name like '李%';注:以李开头的)
+not like //select * from c where name not like '李%';不以李开头的
+// 注: %代表多个字符，_下划线代表1个字符
+
+left //slect left(name, 2) as lname from c1; 从左侧取字符串
+mid //select mid(name, 2,2) from c1; 从中间取字符串，参数2为起始字符串参数3为长度
+right //select right(name,2) as rname from c1; 从右侧取字符串
+rand()// select * from news order by rand() limit 6;
+
+// ======字符集=====
+show character set //查看服务器支持哪些字符集
+set names utf8;//设置客户端和服务端链接使用的字符集
+
+// ======字符集结束====
+
+
+// =====增删改查=========
+[insert, replace] into 表名(列名...) values(值...),(值...)//向表中插入记录
+// insert into stu(name, age) values('李四','1981-1-11') 
+update 表名 set 字段=值 where 条件//更新表记录
+// update stu set qq='1234', sex='女' where id = 1;更新表中id=1的记录，将qq和sex(性别)更新为新内容
+// 注: 条件不是必须的,但是如果没有条件将更新表中的所有记录,所以一定要加上条件
+delete from 表名 where 条件//删除记录
+// delete from stu3 where name like '李%' and age>30; 删除所有姓李的并且年龄大于30的人
+
+// ======mysql修改表结构====
+alter table 表名 rename 新表名//修改表名
+// alter table stu rename stu1;
+
+alter table 表名 change 旧字段 新字段[fist|after字段];//修改字段同时更名
+// alter table stu id cid int;修改字段id, 同时更改字段名
+
+alter table 表名 modify 字段[first|after 字段]//修改字段
+// alter table stu modify id int;
+
+alter table 表名 add 字段[first|after 字段] //
+// after table hdw add name varchar(60) first;在最前面增加字段name
+// after table hdw add age varchar(60) after name; 在名称后加字段
+
+alter table 表名 drop 字段名
+// alter table stu drop name; 删除表stu表中的name字段
+
+alter table 表名 add primary key(id);//添加主键id;
+
+alter table 表名 drop primary key;//删除主键
+// ========*******==============
+// 删除主键的前提是将修饰主键的auto_increment(递增)先去掉，就是修改这个字段，不设auto_increment，然后在删除主键就可以了
+
+select curdate()//获得当前日期, 年月日
+select curtime()//获得当前时间, 时分秒
+select now()//获得当前的日期与时间
+select version()//查看mysql 的版本
+
+date() //获得日期
+time()//获得时间
+year()//年
+month()//月
+day()//获得天
+hour()//时
+minute()//分
+second()//秒
+
+
+
+// ====================练习1=======================
+//向stu表中插入两条数据
+//将student表中id=15的数据：性别改为女，年龄改为30
+//学生表中随机获取5条数据(stu)
+//给student表添加一个time字段
+//删除学生表的time字段(stu)
+//将name 字段修改为char(30)   (stu)
+//删除学生表的主键(stu)
+//给student表添加主键自增
+//查找90后的女同学【birthday】
+//查找班级年龄最小的同学【birthday】
+//删除班级年龄最小的同学【age】
+select * from user;
+// ==================答案===============
+//向stu表中插入两条数据
+insert into stu (name,ssex,sage,birthday) values ('王五','男',24,20000112);
+//将student表中id=15的数据：性别改为女，年龄改为30
+update stu set ssex='女',sage=30 where sid=16;
+//学生表中随机获取5条数据(stu)
+select * from stu order by rand() limit 5;
+//给student表添加一个time字段
+alter table stu add time int not null default 0;
+//删除学生表的time字段(stu)
+alter table stu drop time;
+//将name 字段修改为char(30)   (stu)
+alter table stu modify name char(30) not null default '';
+//删除学生表的主键(stu)
+alter table stu modify sid int;
+alter table stu drop primary key;
+//给student表添加主键自增
+alter table stu add primary key(sid);
+alter table stu modify sid int auto_increment;
+//查找90后的女同学【birthday】
+select * from stu where ssex='女' and year(birthday)>=1990;
+//查找班级年龄最小的同学【birthday】
+select * from stu order by birthday desc limit 1;
+//删除班级年龄最小的同学【age】
+delete from stu order by sage asc limit 1;
+
+//============================练习2================
+
+//列1：c80一共有那几个同学
+        select * from class c join student s on  c.cid=s.cid;
+        select * from class c join student s on  c.cid=s.cid where c.cname='c80';
+        select c.cname,count(*) as total from class c join student s on  c.cid=s.cid where c.cname='c80';
+
+//例2：查找吕强的同班同学【student student】
+select * from student s1 join student s2 on s1.cid=s2.cid;
+select * from student s1 join student s2 on s1.cid=s2.cid where s2.sname='吕强' and s1.sname!='吕强';
+select s1.sname from student s1 join student s2 on s1.cid=s2.cid where s2.sname='吕强' and s1.sname!='吕强';
+//例3：统计每个班分别有多少学生
+    //1.确定需要几张表协助才能完成【class、student】
+    //2.关联
+    select * from class c join student s on  c.cid=s.cid;
+    //3.按照班级进行分组
+    select * from class c join student s on  c.cid=s.cid group by c.cname;
+    //4.根据需求，修改* ，获取自己想要的结果
+    select c.cname,count(*) from class c join student s on  c.cid=s.cid group by c.cname;
+
+
+
+
+//============================= mysql 练习3=============
+//向student表中插入两条数据
+insert into student(sname,ssex) values ('李四','男'),('赵六','女');
+//将student表中id=8的数据：性别改为女，年龄改为30
+update student set sname='赵六',ssex='男' where sid=8;
+//检索出每个标签所对应的文章数量(article  arc_tag  tag)
+    //需要标签表和中间表
+    select * from tag t join arc_tag at on t.tid=at.tid;
+    select * from tag t join arc_tag at on t.tid=at.tid group by t.tname;
+    select t.tname,count(t.tname) from tag t join arc_tag at on t.tid=at.tid group by t.tname;
+//将年纪小于30岁的同学年龄+1(student)
+    update student set sage=sage+1 where sage<30;
+//删除年纪最小的同学(student)
+delete from student order by sage asc limit 1;
+//学生表中随机获取5条数据(student)
+select * from student order by rand() limit 5;
+//查找出没有班级的学生(student class)
+select * from student as s left join class as c on c.cid=s.cid where c.cname is null;
+//给student表添加一个time字段
+alter table student add time int unsigned not null default 0;
+//删除学生表的time字段(student)
+alter table student drop time;
+//检索出标签最多的文章(article   arc_tag  tag)
+select * from article a join arc_tag at on a.aid=at.aid;
+select * from article a join arc_tag at on a.aid=at.aid group by a.title;
+select a.title,count(*) from article a join arc_tag at on a.aid=at.aid group by a.title order by count(*) desc limit 1;
+//将sname 字段修改为char(30)   (student)
+alter table student modify sname varchar(100) not null default '';
+//删除学生表的主键(student)
+alter table student modify sid int;
+alter table student drop primary key;
+//给student表添加主键自增
+alter table student add primary key(sid);
+alter table student modify sid int auto_increment;
+//检索出每篇文章对应的标签(article   arc_tag  tag)
+select * from article as a join arc_tag as at on a.aid=at.aid join tag as t on at.tid=t.tid;
+select a.title,t.tname from article as a join arc_tag as at on a.aid=at.aid join tag as t on at.tid=t.tid;
+//查找姓赵同学的总数(student)
+select count(*) from student where sname  like "赵%";
+//student表和class表，统计每个班有多少学生
+select c.cname,count(s.cid) from student s join class c on c.cid=s.cid group by c.cname;
+//查找吕强的同班同学(不包含吕强)(student class)
+select s1.sname from student s1 join  student s2 on s1.cid = s2.cid where s2.sname='吕强' and  s1.sname!='吕强';
+//检索出【今天你热了吗】这篇文章 有哪些标签(article   arc_tag  tag)
+select a.title,t.tname  from article a join arc_tag at on a.aid=at.aid join tag t on at.tid=t.tid where a.title="今天你热了吗";
+
+
+
+
+
+
+1.//向student表中插入两条数据
+insert into student(sname,ssex) values ('李四','男'),('赵六','女');
+2.//将student表中id=8的数据：性别改为女，年龄改为30
+update student set sname='赵六',ssex='男' where sid=8;
+3.//检索出每个标签所对应的文章数量(article  arc_tag  tag)
+select *  from tag t join arc_tag at on t.tid=at.tid join article a on at.aid=a.aid group by t.tname;
+select * ,count(*) from tag t join arc_tag at on t.tid=at.tid join article a on at.aid=a.aid group by t.tname;
+4.//将年纪小于30岁的同学年龄+1(student)
+ update student set age=age+1;
+5.//删除年纪最小的同学(student)
+delete from student order by age limit 1;
+6.//学生表中随机获取5条数据(student)
+select * from student order by rand() limit 5;
+7.//查找出没有班级的学生(student class)
+select * from student s left join class c on s.cid=c.cid where c.cid is null;
+8.//给student表添加一个time字段
+show create table student;
+9.//删除学生表的time字段(student)
+show create table student;
+10.//检索出标签最多的文章(article   arc_tag  tag)
+select *,count(*) from article a join arc_tag at where a.aid=at.aid group by a.title;
+11.//将sname 字段修改为char(30)   (student)
+alter table student modify name char(30) not null default '';
+12.//删除学生表的主键(student)
+alter table student mofify id int not null default 0;
+alter table student drop primary key ;
+13.//给student表添加主键自增
+alter table student modify id int  primary key auto_increment;
+14.//检索出每篇文章对应的标签(article   arc_tag  tag)
+select * from article a join arc_tag at on a.aid=at.aid join tag t on at.tid=t.tid;
+select title, tname from article a join arc_tag at on a.aid=at.aid join tag t on at.tid=t.tid;
+
+15.//查找姓赵同学的总数(student)
+select name, count(*) from student  where name like '小%';
+16.//student表和class表，统计每个班有多少学生
+select c.cname,count(c.cname) from student s join class c on s.cid=c.cid group by cname;
+17.//查找吕强的同班同学(不包含吕强)(student class)
+select * from student s1 join student s2 on s1.cid=s2.cid where s1.name = '小红' and s2.name!='小红';
+18.//检索出【今天你热了吗】这篇文章 有哪些标签(article   arc_tag  tag)
+select * from article a join arc_tag at on a.aid=at.aid join tag t  on at.tid=t.tid where title='今天你 热了吗';
+

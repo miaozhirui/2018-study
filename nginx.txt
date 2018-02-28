@@ -1,4 +1,6 @@
-
+一、客户端发送post请求到nginx请求请求静态资源的时候，会报405错误
+    A: 在对应的server里面添加 error_page 405 =200 $request_uri;
+    
 一、
 1. nginx安装
 yum install -y gcc 
@@ -114,6 +116,61 @@ scp 远程拷贝文件
 scp -P port 源文件(/usr/nginx.txt) user@remote:目标文件(/root/nginx.txt)
 scp user@remote:目标文件(/root/nginx.txt) 源文件(/usr/nginx.txt)
 scp -r 源文件(/usr/demo) user@remote:目标文件(/root/demo)
+
+
+ssh高级
+    免密码登录
+        1. 配置公钥： 执行ssh-keygen即可生成ssh钥匙，一路回车
+        2. 上传公钥到服务器: 执行ssh-copy-id -p port user@remote,可以让远程服务器记住我们的公钥
+    配置别名
+        1. 每次都输入ssh -p port user@remote, 时间久了会觉得很麻烦，特别是当user, remote 和port 都得输入， 而且还不好记忆
+        2. 配置别名可以让我们进一步偷懒，比如用: ssh mac 来代替上面这么一长串，那么就在~/.ssh/config 里面追加以下内容:
+            Host mac
+                HostName ip地址
+                User  root
+                Port 22
+        3. 保存之后，即可用ssh mac 实现远程登录了, scp同样可以使用
+  
+
+其他命令
+    find ln tar
+    1. find 命令功能非常强大，通常用来在特定目录下搜索符合条件的文件
+        find /root -name "*.txt" 如果不加/root表示在当前目录下面查找
+
+    2. ln软连接(语法: ls -s 被链接的源文件  链接文件)
+        1. 用通俗的方式讲类似于windows下的快捷方式
+        2. 没有 -s 选项建立的是硬链接文件；两个文件占用相同大小的硬盘空间，工作中几乎不会建立文件的硬链接
+        3. 源文件要使用绝对路劲，不能使用相对路径，这样可以方便移动链接文件后，仍然能够正常使用
+
+            演练目标
+                1. 将桌面目录下的01.py 移动到 demo/b/c 目录下
+                2. 在桌面目录下新建01.py 的软连接 FirstPython
+                   分别使用相对路劲和相对路劲建立 FirstPython 的软链接
+                3. 将FirstPython移动到demo目录下，对比使用相对路劲和绝对路劲的区别
+
+
+系统信息
+    查看系统日期和时间/磁盘空间占用情况/程序执行情况
+    1. 时间和日期 date,cal [-y]
+    2. 磁盘和目录空间  
+        df -h 查看磁盘的使用情况 -h表示人性化的方式(disk free)
+        du -h 显示目录下的文件大小(disk usage)
+    3. 进程信息 ps, top, kill
+        进程，通俗的讲就是当前正在执行的程序
+        ps aux  查看进程的详细状况(a 显示终端所有进程，包括其他用户的进程; u 显示进程的详细状态; x显示不是终端启动的程序)
+        top     动态显示运行中并且排序
+            q 退出
+        kill [-9] 进程代号  终止指定代号的进程， -9 表示强制终止
+
+
+
+
+
+
+
+
+
+
 
 
 

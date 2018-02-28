@@ -1,0 +1,25 @@
+##自动布局
+    关键就是：参照+约束(根据谁(参照)设置约束)
+
+##UIScrollView的使用
+    1. UIScrollView 的常见属性
+        contentSize(内容大小),contentOffset(内容偏移),contentInset(内边距)
+    2. UIScrollView 实现滚动、缩放
+    3. UIScollView的常用代理方法
+    4. UIScrollView和UIPageControl(分页指示器控件)的分页
+    5. NSTimer的使用(计时器控件)
+
+例1: 
+    1. 拖拽一个uiscrollview到控制器view, 设置该uiscrollview大小与控制器view一致
+    2. 设置该uiscrollview 的背景色为rgb:212,212,212
+    3. 向uiscrollview中增加内容
+    4. 设置uiscrollview的contentSize的height为最下面的图片的最大的Y值，width为0(因为横向不滚动)
+        提示： 某个方向不希望滚动，则把该方向上的contentSize的值设置为0
+
+
+#ios 类与类之间的三大通信方式
+    block,通知，代理
+
+#shift + option +command +左(折叠所有的代码)
+ shift + option +command +右(展开所有代码)
+

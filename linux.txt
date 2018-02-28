@@ -1,0 +1,358 @@
+##LAMP的安装(Linux + Nginx + Mysql + PHP)
+1. 源代码安装的方式是特别的麻烦，用yum的rpm包安装可能有些包不存在
+2. 源代码安装两个好处
+    1.更好的贴合我们的系统
+    2.跨平台
+3. rpm 就是包含源代码的一个包+软件安装规则
+
+
+
+##dns服务器
+1.dns服务器分为主服务器，从服务器，缓存服务器
+2.dns主服务器: 管理域名，ip地址
+3.dns从服务器: 同步dns主服务器的资料，目的是减轻主服务器，加快用户查询速度
+4.dns缓存服务器: 转发域名和ip地址的查询结果
+5.bind是提供dns解析的软件包，一般用bind-chroot,chroot是保证程序的安全性
+6.bind-chroot是软件包的名称，named是服务的名称
+7.安装完之后，修改配置文件vi /etc/named.conf
+
+##apache httpd 服务
+定义一个yum仓库
+[hahaha]仓库的唯一标示
+name=haha仓库的别名
+baseurl=
+enabled=1 启用
+gpgcheck=0 是否启用校验
+
+1. yum install httpd
+2. systemctl restart httpd 启动这个服务
+3. systemctl enable httpd 将这个服务加到启动项当中,重新启动的话，会直接启动
+3. iptables -F 清空iptables规则
+4. 直接访问60.205.231.190的话会出现一个默认页面
+    出现这样子有两种情况: 1.默认页面不存在，2.权限策略不允许
+5. 解决上面的问题需要在网站根目录添加一个index.html文件
+6. /etc/httpd/conf/httpd.conf里面配置
+    DocumentRoot "/home/www"
+7. 修改完之后重启 systemctl restart httpd
+8. 如果更改根目录的话，可能会导致权限的问题，一般是SELinux导致的
+9. 需要修改/home/www安全上下文
+    ls -ldZ /home/www 查看/home/www的安全上下文
+    -rw-r--r--. root root system_u:object_r:user_home_t:s0 index.html(user_home_t就是此文件的安全上下文)
+    semanage fcontext -a -t httpd_sys_content_t /home/www 修改/home/www文件的安全域为httpd_sys_content_t
+        fcontext 修改上下文
+        -a 代表修改
+        -t 代表修改成什么上下文
+        ps:semanage 不要写目录后面的斜杠
+        执行完上面的命令要执行 restorecon -Rv /home/www 来立即生效上下文
+        如果执行此命令还是403的话，查看里面的文件的上下文，如果不对，需要再修改里面文件的上下文
+        semanage默认是没有的需要安装，可以上网百度
+
+
+
+##iptables与Firewalld防火墙
+*******************Firewalld很重要*************
+firewall-cmd --get-default-zone 获取默认的区域，也就是默认的模板，默认的模板是public
+firewall-cmd --zone=public --query-service=http 查到的结果是no
+firewall-cmd --zone=public --add-service=http 这个命令只是暂时生效，重启之后就失效了
+firewall-cmd --zone=public --query-service=http 查到的结果是yes
+firewall-cmd --permanent --zone=public --query-service=http 查到的结果依然是no
+firewall-cmd --permanent --zone=public --add-service=http 通过这条命令才是永久生效
+
+firewall-cmd --permanent --zone=public --add-port=8080/tcp 在public区永久添加tcp协议8080端口(需要firewall-cmd --reload 重启)
+
+--add-service 添加一个服务
+--remove-service 移除一个服务
+--add-port 添加一个端口号
+--remove-port 移除一个端口号
+
+firewall-cmd --zone=public --query-port=8080/tcp 查看8080端口是否可用
+
+systemctl start firewalld.service 启动一个防火墙
+systemctl status firewalld.service 查看系统防火墙的状态
+systemctl restart firewalld.service 重启防火墙服务
+
+ps:通过firewall-cmd 配置防火墙
+firewall-cmd --version 查看版本
+firewall-cmd --help 查看帮助
+firewall-cmd --state 显示当前防火墙的状态
+firewall-cmd --reload 更新防火墙规则
+怎么开启一个端口呢
+添加
+firewall-cmd --zone=public --add-port=80/tcp --permanent (--permanent永久生效，没有此参数重启之后失效, 并且只有重启之后才能生效)
+重新载入
+firewall-cmd --reload 
+查看
+firewall-cmd --zone=public --query-port=80/tcp
+删除
+firewall-cmd --zone=public --remove-port=80/tcp --permanent
+
+**********************************************
+
+作为了解，在最新的红帽中已经取消掉了
+    iptables -L 显示出来已有的策略和规则
+    iptables -F 清空所有的策略
+    iptables -I INPUT -s 192.168.10.1 -p icmp -j ACCEPT
+        -I 代表在规则列表前面添加此规则，
+        -s 代表请求来源于哪个ip
+        -p 代表请求以什么样的协议过来
+        -j 代表对此请求做出的响应，ACCEPT代表允许访问
+    iptables -D INPUT 3 删除INPUT列的第三条
+
+
+
+## 买一块硬盘之后需要做的事情
+    1.分区(fdisk /dev/sdb) -> 2.格式化 -> 3.挂载(目的是让人使用到硬盘的资源，读取里面的内容；实现的方式是将分区跟我们的某个目录进行关联，这样的操作叫做挂载；效果是当我们访问这个目录的时候，就可以看到硬盘里面的内容了) -> 4. 卸载(目的是将目录与硬盘分开)
+    ps: 挂载命令(mount 设备路径+名称 目录名称)
+        卸载命令(umount 设备路劲+名称/目录)
+
+## 存储结构与磁盘划分
+/bin 不是系统启动用的命令，放这里面，比如ls
+/sbin 系统启动命令，一般都是放在这里面，开机启动的时候需要用到的
+
+***********以下几个是非常重要的目录**********
+/root root 身份的用户的家目录 (只存放超级用户)
+/boot 用来放引导文件或者驱动之类的
+/dev 用来保存设备文件，不管是鼠标，键盘，硬盘，都会被映射成文件保存在/dev中
+/etc 用来保存我们的系统或者各个服务的配置文件
+/home 放普通用户的家目录 /home/用户名
+/media 用来挂载文件，或者光盘之类的
+/proc 虚拟文件系统，例如系统内核，进程，外部设备及网络状态等
+/var 用来保存经常发生变化的文件，比如日志，数据库
+/lost+found 当文件系统发生错误时，将一些丢失的文件片段存放在这里
+******************************
+
+/lib 用来保存系统的调用文件的
+/usr 用户或者第三方程序安装的的程序所在的目录
+/tmp 提供临时文件的写入
+
+
+## 用户的管理
+su 某个用户( 切换到某个用户)
+exit (当在某个普通用户下执行这个命令的时候，执行exit直接退出)
+useradd haha 创建一个叫haha的用户
+id haha 查看这个用户的信息
+usermod -u 6666 haha 将haha这个用户的uid改为6666
+userdel haha 删除haha这个用户的信息
+userdel -f haha 删除haha这个用户的信息，连同家目录所有的信息全部删除掉
+chmod 777 www 修改目录的权限
+chown mzr:mzr www 修改目录的所有组合所有者
+
+SUID 权限 chmod u+s www  (对应的权限 4)
+SGID 权限 chmod g+s www  (对应的权限 2)
+SBIT 权限 chmod o+t www  (对应的权限 1)保护权限，如果新建的某个目录只能是自己删除的话，可以用这个添加权限
+
+## crontab (周期性的执行某个任务,)
+
+man crond 查看计划任务的命令
+vi /etc/crontab 查看计划任务的具体的格式
+crontab -e 编写计划任务
+crontab -e -u zhangsan 去编辑其他用户的计划任务
+定义命令的格式: 分时日月星期 命令 (* * * * * *)
+* * * * * /use/sbin/reboot (后面的命令必须是以路径的形式书写)
+0 1 * * 7 /usr/bin/tar czvf backup.tar.gz /home/wwwroot 每周的凌晨1点钟，执行打包命令
+6月份中的每周四的凌晨5点20分 20 5 * 6 4
+
+## at 计划任务命令 (单次执行某个任务)
+at 19:00 
+写上相应的命令
+commond + d
+at -l 查看有哪些任务
+atrm id编号删除命令
+
+##bash脚本 
+
+echo $0 (当前执行的命令)
+echo $1,$3,$5 ($1第一参数，$3第二个参数,$5第五个参数)
+echo $#,$*($#参数总数, $*所有的参数)
+
+[ -d /etc ] 判断/etc是不是个目录 ，这个大括号两边必须有空格
+[ -f /etc ] 判断/etc是不是一个普通的文件
+[ -e /etc ] 判断/etc是否存在
+echo $? 判断上一条语句是否执行成功; 0:代表成功，1:代表不成功
+
+[ 5 -eq 5 ] 判断5是否等于5
+[ 5 -gt 5 ] 判断5是否大于5
+[ 5 -lt 5 ] 判断5是否小于5
+[ $? -eq 0 ] 判断上一条语句是否执行成功
+
+free -m | grep Mem: | awk '{print $4}' 查看当前内存还剩多少
+[ -z $HAHAHA ] 判断$HAHAHA这个变量是不是存在
+
+`` shell 里面的反引号代表执行这里面的命令得到里面的结果
+
+id 用户名  (查看某个用户的信息)
+
+50dd 一般用这个命令直接所有的内容，
+
+例1：
+    ping -c 3 -i 0.2 -W 3 $1 &> /dev/null
+
+    if [ $? -eq 0 ]
+    then
+    echo "Host $1 is On-line"
+    else
+    echo "Host $1 is off-line"
+    fi
+例2: 
+    read -p "Enter you score:" GRADE
+
+    if [ $GRADE -ge 85 ] && [ $GRADE -le 100 ] ; then
+    echo "$GRADE is greet"
+    elif [ $GRADE -ge 70 ] && [ $GRADE -le 84 ] ; then
+    echo "$GRADE is pass"
+    else
+    echo "$GRADE is Fo"
+    fi
+
+例3:
+    read -p "Enter your passwd" (PASSWD 阅读用户的输入，并且赋值给变量PASSWD)
+
+    for USER in `cat user.txt` (for循环，将user.txt里面的你内容输出给USER)
+    do
+
+    id $USER &> /dev/null (不过错误还是正确讲信息输出到/dev/null)
+    if [ $? -eq 0 ] (判断上一条命令执行是否正确)
+    then
+    echo "User Alreay exists"
+    else
+    useradd $USER &> /dev/null
+    echo $PASSWD | passwd --stdin $USER &> /dev/null (将$PASSWD变量输出出来作为passwd的输入)
+    if [ $? -eq 0 ]
+    then
+    echo "$USER Created success"
+    else
+    echo "$USER, Created failure"
+    fi
+    fi
+
+    done
+
+例4:
+    for IP in `cat ip.txt`
+    do
+    ping -c 3 -i 0.2 -w 3 $IP &> /dev/null (-c 拼几次, -i 每一次拼之间的间隔，-w多久终端)
+    if [ $? -eq 0 ]
+    then
+    echo "Host $IP is on-line"
+    else
+    echo "Host $IP is off-line"
+    fi
+    done
+
+## 编辑器vim的使用方法
+    yy 命令模式代表复制一行
+    3yy 代表复制3行
+    P   命令模式的大写的P代表粘贴
+    dd  删除一行
+    3dd 删除3行
+    / 命令模式写/ 代表搜索摸个关键词，再按n键代表寻找此关键字的下一个位置
+    o 输入模式，领开一行
+    :wq! 保存并且强制退出
+    :q! 强制退出
+
+##常用命令
+    cat /etc/passwd | wc -l 查看多少个用户
+    grep  -n miaozhirui mzr.conf
+    find / -name nginx.conf 全局查找文件名为nginx.conf的文件
+    find / -user nginx -exec cp -rf {} /home/hoho \;
+    uname -a 查看系统信息
+    who 当前登录的用户
+    last 近期登录的用户的相关的信息
+    history 历史命令的执行记录
+    !数字 重复执行历史某条命令
+    cd 用来切换工作目录
+    cd ~ 切换到家目录
+    cd .. 切换到当前目录的上一级目录
+    cd - 切换到上一次的工作目录
+    tail -f error.log 查看文件的最后内容，并且实时的刷新
+    file test.html 查看文件的类型
+    | 管道符，是命令与命令之间的桥梁；前一个命令的输出作为后一个命令的输入
+    cat /etc/passwd | wc -l 统计当前一个有多少个用户
+
+    命令 < 文件  输入重定向 (wc -l < /ect/password)
+    命令 > 文件  输入重定向 (top > test.txt)
+    命令 >> 文件 输入重定向 (追加写入)
+    命令 2> 文件  如果命令执行错误的话，会把错误内容写到文件，不加2直接报错
+    &>          不管正确和错误都重定向到文件里面去
+
+    echo `ls`  在脚本里面执行命令，并且得到结果
+    WORKDIR=/usr/local/www 定义局部变量，只有当前用户可以访问
+    export WORKDIR=/usr/local/www 定义全局变量
+
+    whereis ls
+    ls: /usr/bin/ls(命令的文件所在的位置) /usr/share/man/man1/ls.1.gz 
+
+    alias ls 查看ls是否是某个命令的别名
+    $PATH 是bash解释器查找命令的助手
+    $RANDOM 随机数
+    $LANG 系统当前的编码
+    $SHELL 查看当前使用了什么bash解释器
+    $USER 当前的用户是谁
+
+##生成ssh key
+    ssh-keygen -t rsa -C "youremail@example.com"
+
+
+##增强服务器安全等级
+1. 修改ssh 默认的端口号22 (0~65536)0~1024这之间的端口是被系统用了，最好不要用
+  vi /etc/ssh/sshd_config
+     Port 自己定义29999
+     UseDns no
+     AllowUsers mzr_manage 如果添加此用户就添加这一行，只允许这个用户登录
+
+
+##修改完重启ssh服务
+    systemctl restart sshd
+    此时通过ssh 22端口就登不上服务器了
+    ssh -p root@log.miaozhirui.com
+
+##最好关闭服务器root密码登录，因为只要买了阿里云大家都知道最高权限的用户名是root
+
+###########################Linux里面的小技巧
+1. /etc/服务名称/[conf/]服务名称.conf 查找yum安装之后的软件的配置文件
+2. SELinux 是安全子系统, 限制服务程序只能做合法的操作
+    setenforce 0 临时关闭SELinux服务
+    setenforce 1 临时开启SELinux服务
+    vi /etc/selinux/config 将里面设置 SELinux=disabled，是永久的关闭
+                                    SELinux=enforcing 是强制开启模式
+    SELinux分为域和安全上下文（域是功能的限制，安全上下文是对文件的限制，什么文件是做什么的一开始都是规划好的）
+3. linux的源码下载到/usr/local/src/
+4. 配置yum仓库的步骤
+    vi /etc/yum.repos.d/任意名称.repo
+    配置文件里面的内容如下
+    ```
+    [nginx] #yum仓库的唯一标识符
+    name=nginx repo #yum仓库的名称，不是很重要
+    baseurl=http://nginx.org/packages/centos/7/$basearch/ #提供yum仓库的地址
+    gpgcheck=0 #是否进行校验，0代表不需要校验
+    enabled=1 #是否启用yum仓库,1代表启用此yum仓库
+    ```
+5. yum常用命令
+    1. 列出所有可更新的软件清单命令: yum check-update
+    2. 更新所有软件命令: yum update
+    3. 仅安装指定的软件命令: yum install <package_name>
+    4. 仅更新指定的软件命令: yum update <package_name>
+    5. 列出所有可安装的软件清单命令: yum list (可以用yum list | grep ** 找到具体的某个仓库)
+    6. 删除软件包命令: yum remove <package_name>
+    7. 查找软件包命令: yum search <keyword>
+    8. 清除缓存命令:
+        *yum clean packages: 清除缓存目录下的软件包
+        *yum clean headers: 清除缓存目录下的 headers
+        *yum clean oldheaders: 清除缓存目录下旧的 headers
+        *yum clean, yum clean all (= yum clean packages; yum clean oldheaders) 
+
+6. lsof -i :80 查看系统的80端口被哪个服务给占用了
+7. yum repolist | grep mysql 查看mysql的yum仓库
+
+
+
+
+
+
+
+
+
+
+
+
+
