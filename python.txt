@@ -1,0 +1,483 @@
+一、查看python的最新的版本
+    www.python.org -> Downloads -> Mac OSx
+二、编辑工具用Geany
+三、定义变量和简单数据类型
+    变量
+        name = "mzr"
+        age = 1;
+    操作字符串
+        name1 = "my name is xx"
+        name1.title()将单词首字母变成大写
+        name1.lower()将字符串都转成小写
+        name1.upper()都转成大写
+        name + name1 字符串的拼接
+        name.strip() 删除空格
+        name.lstrip() 删除左边的空格
+        name.rstrip() 删除右边的空格
+        str(10)把数字转成字符串
+        int("10")将字符串转成整数
+    数据类型包括以下
+        str int float bool(True, False) 列表
+
+四、python列表数据类型(有序的元素的集合，类似于js里面的数组)
+    例子: lists = ['mzr',11,11.1,False,[1,2,3,4]];
+
+    对列表元素的访问
+        lists[0] 获取第一个元素
+        lists[lists[len(lists)-1]]找到最后的一个元素
+        lsts[-1] 找到列表里面的最后的一个元素
+        lsts[-2] 获取列表倒数第二个元素
+    对列表元素的增删改查
+        lists[0] = "hello" 修改
+        lists.append(900) 在列表最后面添加一个900
+        lists.insert(1, "插入") 子指定的索引位置插入一个值
+
+        这种删除是需要知道删除的元素的索引
+            del lists[0]; 删除lists里面的第一个元素
+            lists.pop(); 弹出列表里面的最后一个元素，也是删除最后一个元素，返回值是弹出的值
+            lists.pop(2);弹出第三个元素，并且返回了第三个元素，相比于del，可以获得到删除的内容
+        还有一种是知道要删除的值，但是不知道索引
+            lists.remove(11);删除列表里面值为11的值, 如果有多个11的话，只会删除第一个；如果想删除全部的11元素，就需要用到循环
+        lists = [] 清空列表
+        del lists[:] 也是清空列表
+    对列表的排序
+        names = ["zhangsan", "www", "print", "console"];
+        names.sort() 对字母从小到大排序，是永久的改变
+        names.sort(reverse = True) 对字母从大到小排序, 也是永久性的改变
+        sortd(names) 得到的结果是从小到大的，是临时性的改变
+        sortd(names,reverse = True)从大到小，也是临时性的改变
+    列表的反转
+        names.reverse() 反转列表元素
+
+五: for循环
+    循环某个列表
+        for item in names: 
+            print(item);
+            print("内部");
+
+    循环十次
+        for item in range(0, 10):
+            print(item);
+
+    指定步长
+        for num in range(0,10,2):
+            print(num);
+
+    for item in range(1, 11):
+        tem = item**2;
+        sequre.append(tem);
+    [value**2 for value in range(1,11)]
+
+六: 常用函数
+    max(list) 找出列表里面的最大值
+    min(list) 找出列表里面的最小值
+    sum(list) 求出列表里面的和
+
+七、切片(取部分的内容出来)
+    lists = [1,2,3,4,5];
+    lists[0:3] 取出索引0到3的
+    lists[:3] 取出从头到索引为3的
+    lists[3:] 取出索引3到最后的元素
+    lists[:] 相当于是复制
+    lists[-3:] 从倒数第三个到最后
+
+八、元祖tuple(特殊的列表，元素不可变的列表)
+    tuple_a = (1,2,3);此列表是不能更改的
+
+九、条件语句
+    cars = ["aodi", 'benshi', 'Bmw', 'toyata'];
+
+    1.
+    普通的判断
+        for car in cars:
+            if car == "Bmw":
+                print(car.lower())
+            else:
+                print(car.title())
+    2.
+    if and or
+        if(age > 18) and (age<20):
+            print('用户19岁')
+    3.
+    if in 判断列表里面是否包含某个元素
+        cars = ['baoma', 'benci'];
+        car = 'baoma'
+        if car in cars:
+            print(car)
+    4.
+    if not in
+        if car not in cars:
+
+    5.
+    if 
+    elif
+    else  
+
+    6. 
+        lists = [];
+        if lists: //判断lists是否为空
+            for item in lists:
+                print(item)
+        else:
+            print("列表为空");  
+
+十、字典(用大括号表示)
+    例子:
+        dictionnary = {'name': 'miaozhiru', 'age': 100};
+        print(dictionnary);
+
+    添加:
+        dictionnary['sex'] = "男性";
+
+    删除: 
+        del dictionnary['age'];
+
+    直观的书写方式:
+        dic1 = {
+            'name':'mzr',
+            'age':100,
+            'sex':'male'
+            }
+
+    对字典里面的内容进行遍历:
+        dic1 = {
+            "name":"mzr",
+            "age": 100,
+            "sex": "男"
+        }
+
+        遍历里面的每一项
+            for key, value in dic1.items():
+                print(key + '----------' + str(value));
+        只遍历key
+            for key in dic1.keys():
+                print(key)
+            相当于
+            for key in dic1:
+                print(key)
+        只遍历value
+            for value in dic1.values():
+                print(value);
+        只遍历value,并且去掉重复
+            for value in set(dic1.values());
+                print(value)
+    对字典进行排序
+        for key in sorted(dic1.keys()):
+            print(key);
+
+十一、获取用户输入和while循环
+    获取用户的输入
+        msg = input('please input you name:');里面的参数是提升用户的输入内容
+        print(type (msg))
+        ps: 接收到用户输入的内容都是字符串，如果希望是整数，在程序里面需要进行转换
+
+    while循环
+        counter = 1;
+        while counter <=5:
+            print(counter)
+            counter+=1
+
+    while循环和用户的输入的判断
+        active = True;
+        while active:
+            msg = input('请输入姓名');
+            if(msg=='quit'):
+                active = False;
+            else: 
+                print(msg);
+                
+        print('while end');
+
+    删除列表重复的元素
+        cars = ['bmw','benci','bmw'];
+        while 'bmw' in cars:
+            cars.remove('bmw');
+        print(cars);
+
+    终端录如用户的信息
+        student = {};
+        donging = True;
+        while donging:
+            name = input('请输入您的姓名:');
+            age = input('请输入您的年龄:');
+            student[name] = age;
+
+            
+            askInfo = input('继续输输入吗?yes/no');
+            if(askInfo == 'no'):
+                donging = False;
+        print('end');
+
+        print(student);
+        for key,value in student.items():
+            print(key+'-------'+value);
+
+十二、函数的使用
+
+    定义函数(无参数，无返回值)
+        def printHello():
+            print('hello');
+            
+        printHello();
+
+    定义函数(有参数，无返回值)
+        def printHello(name):
+    
+            print('hello'+name);
+            
+        printHello('mzr');
+
+    参数的传递方式: 1. 位置实参，2.关键字实参，3.任意数量的实参
+        1. 位置实参
+            def sum(x,y,x):
+                print(x+y+x);
+                
+            sum(1,2,3)
+        2. 关键字实参
+            def sum(x,y,z):
+                print(x+y+z);
+            sum(x=1,y=2,z=3);
+        3. 任意数量的实参
+            把实际实参放到元祖nums里面去了
+                def sum(n,*nums): //元祖前面可以指定其他的实参
+                result = 0;
+                for n in nums:
+                    result += n;
+                    
+                return result;
+                
+                r = sum(1,2,3,4);
+                print(r);
+
+            把实际参数放到字典里面去
+                def createUser(name,**params):
+                    user = {};
+                    user['name']=name;
+                    for key,value in params.items():
+                        user[key] = value;
+                    
+                    return user;
+
+                user = createUser('miao', age=10,sex='男');
+                print(user);
+
+    函数形参设置默认值(默认值要放在最后面)
+        def sum(x,y,z=4):
+            print(x+y+z);
+
+        sum(1,2)
+
+    函数有返回值
+        def sum(x,y,z):
+            result = x+y+z;
+            return result;
+        result = sum(1,2,3);
+        print(result);
+
+    给函数传递一个列表
+        def print_friends(names):
+        for name in names:
+            print(name);
+
+        friends = ['zhangsan', 'lisi', 'wangwu'];
+        print_friends(friends);
+
+十三、python里面的模块(可以将很多的函数放到一个模块里面去，以供后面的使用)
+
+     使用方式1: 
+        import fun_modules;导入
+        fun_modules.add_nums(1,2,3,4)使用
+     使用方式2:
+        import fun_modules as f;导入
+        f.add_nums(1,2,3,4)使用
+     使用方式3: (只导入模块里面的某个函数)
+        from fun_modules import add_nums;
+        add_nums(1,2,3,4,5);
+     使用方式4: 
+        from fun_modules import add_nums as add1;
+        print(add1(1,2,3,4,5));
+     使用方式5: 不推荐使用
+        from fun_modules import *; 相当于把所有的函数都导入进来了，所有的函数可以直接使用
+
+十四、python的类(累的规范是，类名是大驼峰)
+    定义
+        class Dog():
+            def __init__(self, name, age, weight=5):
+                self.name = name;
+                self.age = age;
+                self.weight = weight;
+            
+            def eatBone(self):
+                print(self.name+"is eating bone");
+            
+            def bark(self):
+                print(self.name+"is barking");
+
+
+        myDog = Dog('xiaogougou', 10);
+    使用
+        print(myDog.name);
+        print(myDog.age);
+        myDog.eatBone();
+        myDog.bark();
+
+    继承
+        class PetDog(Dog):
+            """写下当前类的注释"""
+            def __init__(self,name, age):
+            """写下当前函数的注释"""
+                super().__init__(name,age);
+
+        my_pet_dog = PetDog('xiaohai',1);
+
+        print(my_pet_dog.name);
+        print(my_pet_dog.age);
+        my_pet_dog.eatBone();
+        my_pet_dog.bark();
+
+    子类拥有自己的属性和方法
+        class PetDog(Dog):
+        def __init__(self,name, age):
+            super().__init__(name,age);
+            self.food = [];
+            
+        def printFood(self):
+            if self.food:   
+                print(self.food);
+
+        my_pet_dog = PetDog('xiaohai',1);
+
+        my_pet_dog.food = ['gouliang', 'xxx'];
+
+        my_pet_dog.printFood();
+
+十五、类的导入(如果有标准库，就先导入标准库；然后空一行，再导入自己的标准库)
+
+
+十六、python的标准库
+    from collection import OrderdDict;
+    order1 = OrderdDict();//创建一个有序的字典
+    order1['hello'] = 28;
+    order1['hello1'] = 30;
+    order['hello2'] = 40;
+
+十七、文件的操作
+    读取内容
+        with open('mzr.txt','r') as fileObject:  //打开一个文件，作为文件对象；然后通过文件对象读取文件里面的内容
+            contents = fileObject.read();
+            print(contents);
+    逐行读取文件里面的内容
+        fileName = 'mzr.txt';
+
+        with open(fileName) as fileObject:
+            #~ contents = fileObject.read();
+            #~ print(contents);
+            for line in fileObject:
+                print(line.rstrip());
+    逐行读取文件里面的另一种方式
+        fileName = 'mzr.txt';
+
+        with open(fileName) as fileObject:
+            #~ contents = fileObject.read();
+            #~ print(contents);
+            #~ for line in fileObject:
+                #~ print(line.rstrip());
+            lines = fileObject.readlines();
+
+        #~ print(lines);
+        for line in lines:
+            print(line.rstrip());
+
+    往文件里面写入内容
+
+        fileName = "mzradmin888.txt";
+
+        with open(fileName, 'w') as fileObject:
+            fileObject.wirte('你好啊');
+            fileObject.write('good idea');
+
+        ps: 'w' 是直接替换文件里面的内容；如果想追加的话，把模式改成'a'
+
+十八、文件操作的异常处理
+    异常捕获
+        try:
+            print(7/0);
+        except ZeroDivisionError:
+            print('error is doing');
+        else:
+            print('is working');
+
+    ps: 出错的话走except;不出错的话走else
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,3 +1,78 @@
+######### 彩票项目的笔记 ######################
+1. app图标的生成工具: prepo (找美工找一张1024*1024的图片，然后往这个工具里面一拖，就会生成app icon所需要的图标)
+2. 启动图决定着应程序的分辨率
+3. 在项目根目录新建几个文件夹
+    Classes 自己写的类，模块都放在这个里面, 这个里面又分几个模块,每个某块又分mvc
+        Hall(购彩大厅)
+            Modal
+            View
+            Controller
+            Other
+        Arenal(竞技场)
+            Modal
+            View
+            Controller
+            Other
+        Discovery(发现)
+            Modal
+            View
+            Controller
+            Other
+        History(开奖信息)
+            Modal
+            View
+            Controller
+            Other
+        MyLottery(我的彩票)
+            Modal
+            View
+            Controller
+            Other
+        Main(主框架,公共的一般放在这个里面)
+            Moal
+            View
+            Controller
+            Other
+    Libs 放第三方的库
+    Others 放一些其他必须的，但是开发又不需要的
+    Common 放分类
+
+
+
+
+
+
+
+
+
+
+############ 开发彩票项目的的步骤 ##################
+
+## 彩票基本框架
+1. 设置启动图
+2. 创建图标
+3. 分模块
+4. 关闭横竖屏
+
+## 自定义tabbar
+1. 加载5个storyboard的箭头控制器
+2. 使用UIView
+3. 使用按钮 touch down
+4. 设置按钮的默认和选中的背景图片
+5. 取消按钮高亮状态
+
+## 自定义nav
+1. 设置navBar的图片
+2. 文字标题统一设置成白色
+3. 设置状态栏为白色
+4. 设置tint
+
+## 购彩大厅
+
+
+
+
+
 ##自动布局
     关键就是：参照+约束(根据谁(参照)设置约束)
 
