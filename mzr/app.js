@@ -26,7 +26,7 @@ app.use(async (ctx, next) => {
         var data = await weixin.fetchTicket(access_token);
 
         var ticket = data.ticket;
-        var url = ctx.query.url;
+        var url = decodeURIComponent(ctx.query.url);
 
         //根据url, ticket生成签名
         var signData = utils.sign({
