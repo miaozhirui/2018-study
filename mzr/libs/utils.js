@@ -32,7 +32,7 @@ module.exports = {
 
         var params = [
 
-            'noncestr=' + noncestr,
+            'nonceStr=' + noncestr,
             'jsapi_ticket=' + ticket,
             'timestamp=' + timestamp,
             'url=' + url
