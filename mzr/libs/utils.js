@@ -23,7 +23,7 @@ module.exports = {
 
         return {
 
-            noncestr: noncestr,
+            nonceStr: noncestr,
             timestamp: timestamp,
             signature: signature
         }
