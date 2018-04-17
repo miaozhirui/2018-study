@@ -11,42 +11,173 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/webpack.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="图" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/图">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pageA.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/src/pageA.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utility1.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/src/utils/utility1.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utility3.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/src/utils/utility3.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pageC.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/src/pageC.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>__webpack_require__.s</find>
+      <find>red</find>
+      <find>base</find>
+      <find>cssExtract</find>
+      <find>getColr</find>
+      <find>getC</find>
+      <find>get</find>
+      <find>copy-webpack-plugin</find>
+      <find>CopyWebpackPlugin</find>
+      <find>resolve</find>
+      <find>_dll_react</find>
+      <find>uglifyJS</find>
+      <find>console()</find>
+      <find>2222</find>
+      <find>console.log(222</find>
+      <find>accept</find>
+      <find>module.hot.accept</find>
+      <find>getName</find>
+      <find>getAge</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/webpack/src/index.js" />
-        <option value="$PROJECT_DIR$/js/webpack-test/package.json" />
+        <option value="$PROJECT_DIR$/js/webpack-test/sass.sass" />
+        <option value="$PROJECT_DIR$/js/webpack-test/sass.scss" />
+        <option value="$PROJECT_DIR$/js/webpack-test/src/index.css" />
+        <option value="$PROJECT_DIR$/js/webpack-test/postcss.config.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/dist/less/less.css" />
+        <option value="$PROJECT_DIR$/js/webpack-test/src/less.less" />
+        <option value="$PROJECT_DIR$/js/webpack-test/src/color.js" />
+        <option value="$PROJECT_DIR$/js/react/my-app/src/index.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/src/public/design.txt" />
+        <option value="$PROJECT_DIR$/js/webpack-test/src/main.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/src/index.html" />
         <option value="$PROJECT_DIR$/js/webpack-test/webpack.config.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/src/index.html" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/src/base.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/.babelrc" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/lib/ajax.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/lib/fetch/package.json" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/lib/fetch/node.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/lib/fetch/browser.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/webpack.react.config.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/webpack.lib.config.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/src/lib.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/note.txt" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/dist/bundle.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/webpack.dev.config.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/src/index.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/dist/index.html" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/webpack.prod.config.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/package.json" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/webpack.config.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.24/webpack.base.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27/src/index.html" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27/package.json" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27/webpack.config.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27/src/index.css" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27/src/base2.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27/src/base.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27/src/index.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27-1/readme.md" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27-1/src/index.html" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27-1/src/info.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27-1/src/main.js" />
         <option value="$PROJECT_DIR$/js/webpack-test/note.txt" />
-        <option value="$PROJECT_DIR$/js/webpack-test/dist/bundle.js" />
-        <option value="$PROJECT_DIR$/js/webpack-test/history/1.bundle.js" />
-        <option value="$PROJECT_DIR$/js/webpack-test/1.readme.md" />
-        <option value="$PROJECT_DIR$/js/webpack-test/src/index.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27-1/src/pageB.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27-1/src/pageC.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27-1/package.json" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27-1/src/utils/utility1.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27-1/src/utils/utility2.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27-1/src/utils/utility3.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27-1/src/pageA.js" />
+        <option value="$PROJECT_DIR$/js/webpack-test/3.27-1/webpack.config.js" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>true</other-services-enabled>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/js/webpack-test/node_modules" />
+    <handled-path value="$PROJECT_DIR$/js/react/my-app/node_modules" />
+    <handled-path value="$PROJECT_DIR$/js/webpack-test/3.23/node_modules" />
+    <handled-path value="$PROJECT_DIR$/js/webpack-test/3.24/node_modules" />
+    <handled-path value="$PROJECT_DIR$/js/webpack-test/3.27/node_modules" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-1920" />
     <option name="y" value="-257" />
-    <option name="width" value="1698" />
-    <option name="height" value="1008" />
+    <option name="width" value="1551" />
+    <option name="height" value="1009" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -76,48 +207,35 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nodejs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nodejs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nodejs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nodejs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webpack-test" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v8.9.4/bin/node" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+  </component>
+  <component name="ReadonlyStatusHandler">
+    <option name="SHOW_DIALOG" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/js/webpack-test/3.27-1/src/utils" />
+      <recent name="$PROJECT_DIR$/js/webpack-test/3.24" />
+      <recent name="$PROJECT_DIR$/js/webpack-test/src/image" />
+      <recent name="$PROJECT_DIR$/js/webpack-test/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/js/webpack-test" />
+      <recent name="$PROJECT_DIR$/js/webpack-test/3.23" />
+      <recent name="$PROJECT_DIR$/js/webpack-test/src" />
+      <recent name="$PROJECT_DIR$/js/webpack-test/src/image" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -171,6 +289,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -206,25 +330,42 @@
       <updated>1520995111940</updated>
       <workItem from="1520995113743" duration="664000" />
       <workItem from="1521092378941" duration="5255000" />
+      <workItem from="1521115912886" duration="325000" />
+      <workItem from="1521200970054" duration="84000" />
+      <workItem from="1521201057243" duration="964000" />
+      <workItem from="1521211137859" duration="445000" />
+      <workItem from="1521337849990" duration="1318000" />
+      <workItem from="1521681070782" duration="10047000" />
+      <workItem from="1521704049195" duration="8918000" />
+      <workItem from="1521713819284" duration="1823000" />
+      <workItem from="1521715685746" duration="1428000" />
+      <workItem from="1521766825182" duration="4684000" />
+      <workItem from="1521774600223" duration="185000" />
+      <workItem from="1521774790503" duration="11884000" />
+      <workItem from="1522035484306" duration="10566000" />
+      <workItem from="1522135667961" duration="4031000" />
+      <workItem from="1522140563602" duration="1892000" />
+      <workItem from="1522142623944" duration="1891000" />
+      <workItem from="1523252275802" duration="1208000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5919000" />
+    <option name="totallyTimeSpent" value="67612000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="-257" width="1698" height="1008" extended-state="0" />
+    <frame x="-1920" y="-257" width="1551" height="1009" extended-state="0" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16767189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2276638" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36516854" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -241,84 +382,343 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/webpack-test/node_modules/.bin/webpack-cli">
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.24/webpack.react.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" column="15" lean-forward="true" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
-          <folding />
+        <state relative-caret-position="462">
+          <caret line="21" column="6" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/webpack-test/package.json">
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.24/webpack.lib.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="38" />
-          <folding />
+        <state relative-caret-position="374">
+          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/webpack-test/note.txt">
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.24/src/lib.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.24/dist/react_dll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.24/note.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.24/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.24/dist/bundle.js" />
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.24/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.23/postcss.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.23/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="175" column="37" lean-forward="true" selection-start-line="175" selection-start-column="37" selection-end-line="175" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.24/dist/main.js" />
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.24/webpack.prod.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding />
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/webpack-test/history/1.bundle.js">
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.24/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="821">
-          <caret line="84" column="16" lean-forward="false" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#229#1113#0" expanded="false" />
-            <element signature="e#1505#1847#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="110">
+          <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="92" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/webpack-test/dist/bundle.js">
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.24/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="29" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="84" selection-end-column="12" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#209#901#0" expanded="false" />
-            <element signature="e#1253#1491#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="264">
+          <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/webpack-test/1.readme.md">
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.24/webpack.dev.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.24/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.24/webpack.base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="88" column="11" lean-forward="true" selection-start-line="88" selection-start-column="11" selection-end-line="88" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27/node_modules/webpack/lib/webpack.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="109" column="22" lean-forward="false" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27/node_modules/webpack/bin/webpack.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="13" column="68" lean-forward="false" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27/src/base2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27/src/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27/dist/main.3ffd0d43ca978f577f8b.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="841" column="266" lean-forward="false" selection-start-line="841" selection-start-column="266" selection-end-line="841" selection-end-column="266" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="22" lean-forward="true" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-            <folding />
+          <first_editor relative-caret-position="22">
+            <caret line="1" column="28" lean-forward="true" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/webpack-test/src/index.js">
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/src/index.js" />
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        <state relative-caret-position="264">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/dist/main.5f18d832143a3fcbc1e0.js" />
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/src/info.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/dist/main.ef94c4de4a58e241b391.js" />
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/dist/main.d75dc3349f7b33b589a5.js" />
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/note.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="133" column="18" lean-forward="true" selection-start-line="133" selection-start-column="18" selection-end-line="133" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/dist/pageA.89f28571e86fcadd75fc.js" />
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/dist/pageA.4fe0b0711bd0ada572b8.js" />
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/src/pageC.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/webpack-test/webpack.config.js">
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/src/pageB.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        <state relative-caret-position="22">
+          <caret line="1" column="25" lean-forward="true" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/src/utils/utility2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/dist/pageA.8200a86de19905440d4f.js" />
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/src/utils/utility3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/src/utils/utility1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/dist/vendor.2f60a313489819cf3b31.js" />
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/src/pageA.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/webpack-test/3.27-1/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/图">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="Copyright.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

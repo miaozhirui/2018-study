@@ -1,0 +1,12 @@
+.avator{
+    width:100px;
+    height:100px;
+    background: url('./image/lingdang.png') no-repeat center;
+    background-size: contain;
+
+}
+.square{
+    width:100px;
+    heigth:100px;
+    transform: translateX(100px);
+}

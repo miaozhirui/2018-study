@@ -1,4 +1,7 @@
-1. npm install webpack webpack-cli --save-dev
+####### npx webpack -v(4.1.1) ##########
+
+########################## webpack 的基本配置 ##################
+1. cnpm search loader/plugin 获取插件或者loader的使用方式
 2. npx 可以直接运行node_modules/.bin目录下面的命令
 3. 通过配置package.json中的script build "build:":"webpack"
 4. webpack 运行原理
@@ -7,3 +10,154 @@
 5. 运行项目目录下面的webpack的方式
     1. npx webpack
     2. npm run dev  (dev的配置方式：webpack --mode development)
+
+ 6. webpack-dev-server 会在客户端起一个websocket,保持跟服务器端链接；当服务器端文件发生变化，会通知客户端更新
+ 7. npm 和 npx 区别是什么
+    .bin目录下面放了命令，npm执行不了，需要通过npx来执行
+
+ 8. 已有的项目可以直接改造成webpack吗
+    如果项目没有用任何模块化开发，那是不行的；至少用了模块化开发，或者amd，cmd之类的
+
+ 9. 需要安装的包
+     cnpm install webpack webpack-cli --save-dev //webpack4.1已经将webpack源码和命令分开了
+     cnpm i webpack-dev-server -D //开启热更新
+     cnpm i html-webpack-plugin -D 根据模板生成html文件放到目标目录下面
+
+     cnpm i jquery -D
+     cnpm i expose-loader -D //将私有变量暴露成全局变量
+     cnpm i css-loader -D //处理css文件的loader
+     cnpm i style-loader -D //将css插入到页面的style标签里面去
+     cnpm i file-loader -D //解析图片
+     cnpm i url-loader -D //内部会调用file-loader,如果图片比较小的话，可以通过这个插件将图片转化成base64直接嵌入到css文件里面，减少http的访问
+     cnpm i html-withimg-loader -D //解析html文件里面的图片地址,将源地址改为打包为目标地址
+     cnpm i less less-loader -D
+     cnpm i node-sass sass-loader -D
+     cnpm i extract-text-webpack-plugin@next -D //用来将css提取出单独的文件
+     cnpm i postcss-loader -D //css预处理
+     cnpm i autoprefixer -D //自动添加前缀
+     cnpm i babel-loader babel-core babel-preset-env babel-preset-stage-0 babel-preset-react  -D //编译es6,es7的代码
+     cnpm i copy-webpack-plugin -D //拷贝文件
+     cnpm i uglifyjs-webpack-plugin -D //压缩js
+     cnpm i happypack@next -D //开启多线程
+     cnpm i webpack-parallel-uglify-plugin -D
+     cnpm i webpack-merge -D 用来合并webpack的配置文件的
+
+
+
+ 10. webpack打包的出来的模块是拿不到其他模块的数据的
+
+ 11. module和plugin的区别
+    module使用来解析各种模块文件的；plugin是实现某些功能的，比如拷贝，删除，自动生成文件等功能
+    module里面定义的loader主要用来处理非js文件；plugin主要是用来处理任何功能，比如在webpack打包过程中，执行任意的功能
+
+ 12. 图片的处理
+        1. js直接加载
+        2. css里面加载文件
+        3. html里面加载图片
+        4. 指定图片的输出目录
+        5. 如果图片特别小的话，可以将图片转换成base64直接嵌入到css文件里面，减少http的访问
+
+13. 如何处理sass,less的文件
+
+14. 有些时候希望把页面中的css文件单独拉出来保存加载
+    extract-text-webpack-plugin
+
+15. 自动添加前缀
+        用到的loader是postcss-loader, 插件是autoprefixer(postcss-loader会对css文件预处理，如果有遇到需要加前缀的，会调用autoprefixer插件)
+        需要在根目录下面创建一个postcss.config.js
+            module.exports = {
+
+                plugins: [require('autoprefixer')]
+            }
+
+16. 如何处理es6, es7的代码
+
+17. 拷贝文件
+        const CopyWebpackPlugin = require('copy-webpack-plugin');
+        plugin里面写入
+            new CopyWebpackPlugin([
+                        {
+                            from: path.join(__dirname, './src/public'),
+                            to: path.join(__dirname, './dist/public')
+                        }
+             ]),
+
+18. 压缩js
+        const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin');
+        plugin里面写入: new UglifyjsWebpackPlugin();
+
+19. 项目中如何使用bootstrap
+    require('bootstrap');
+    resolve: {
+         //引入模块的时候，可以不加扩展名;会依次按照数组的顺序查找文件；利用率越高的往前找
+         extensions: ['','.js', '.less', '.json'],
+         //webpack在require模块的时候，会看看这边是否有别名，如果有的话，会加载该模块
+         alias: {
+             'bootstrap': 'bootstrap/dist/css/bootstrap.css'
+         }
+    },
+
+20. 如何debugger webpack
+   npm i vscode-webpack-debugger -D
+
+
+
+
+#################################### webpack 应用 #############################
+##构建一个 react webpack配置
+##webpack常用的优化方案
+##如何编写自定义的loader和plugin
+
+1. DLL为后缀的文件称为动态链接库, 在一个动态链接库中可以包含给其他模块调用的函数和数据
+
+    1. 把基础模块独立出来，打包到单独的动态连接库里面
+    2. 当需要导入的模块在动态连接库里的时候，模块不能再次打包，而是去动态连接库里面去获取
+    3. 用到的插件
+        DllPlugin插件: 用于打包出一个动态连接库
+        DllReferencePlugin: 在配置文件中引入DllPlugin插件打包好的动态链接库
+
+2. webpack通过package.json设置环境变量，来区分不同的配置文件;
+    window： set NODE_ENV = production
+    mac: export NODE_ENV = production
+
+    ps: 在window下面和mac下面是不一样的，所以上面命令是不能通用的；解决方案是，通过cross-env这个模块 cross-env NODE_ENV = production
+
+
+3. 代码里面如何设置环境变量，也是有方案的
+
+4. 以下配合使用，可以达到tree shaking的作用
+"build": "webpack --display-used-exports  --mode production",
+{
+    test: /\.js$/,
+    use: {
+        loader: 'babel-loader',
+        options: {
+            presets: [
+                ['env',{modules:false}]//modules:false,就是指定不要把es6的import export 编译成es5的语法
+            ]
+        }
+    },
+    include: path.resolve('./src'),
+    exclude: path.resolve('node_modules')
+}
+
+5. 提取代码
+    1. 基础类库 react react-dom
+    2. 页面可复用的代码 ajax封装
+    3. 各个页面的业务代码
+
+6. 内联： const ModuleCancatenationPlugin= require('webpack/lib/optimize/ModuleCancatenationPlugin');
+7, 代码分离
+
+
+############################### webpack常见依赖安装 ########################
+cnpm i webpack webpack-cli babel-core babel-loader babel-preset-env babel-preset-stage-0 babel-preset-react html-webpack-plugin D
+
+
+
+
+
+
+
+
+
