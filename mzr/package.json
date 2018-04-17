@@ -1,7 +1,6 @@
 {
   "name": "mzr",
-  "version": "1.0.3",
-  "description": "",
+  "version": "1.0.4",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +18,6 @@
     "request": "^2.85.0",
     "sha1": "^1.1.1",
     "xml2js": "^0.4.19"
-  }
+  },
+  "description": ""
 }

@@ -65,7 +65,6 @@ app.use(parseXml())
 app.use(replyMessage());
 
 
-app.listen(3000);
+module.exports = app;
 
 
-console.log('Listening: 3000')
