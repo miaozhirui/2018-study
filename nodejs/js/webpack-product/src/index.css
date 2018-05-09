@@ -1,0 +1,10 @@
+body{
+    background: red;
+}
+
+.avatar{
+    background:url("./images/thumb.png") no-repeat center;
+    background-size: contain;
+    width:300px;
+    height:80px;
+}
