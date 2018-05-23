@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--Mvvm 双向数据绑定 mvvm angular 脏值检测 vue 数据劫持—>发布订阅模式-->
+<script>
+    var obj = {}
+    Object.defineProperty(obj, 'student', {
+        configurable:true,//可配置的，可以删除；默认是false
+//        writable:true,//可写入的；默认是false
+        enumerable:true,//可枚举的
+//        value:"你好",//定义的值
+        get:function () {
+
+            return 'miaozhirui'
+        }, 
+        set: function (val) {
+
+            console.log(val)
+        }
+    })
+//    delete  obj.student;
+//    obj.student = 'hah '
+//    console.log(obj)
+//    for(var i in obj) {
+//
+//        console.log(i)
+//    }
+    obj.student = "你好啊"
+    console.log(obj.student)
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+!function(e){var r={};function n(o){if(r[o])return r[o].exports;var t=r[o]={i:o,l:!1,exports:{}};return e[o].call(t.exports,t,t.exports,n),t.l=!0,t.exports}n.m=e,n.c=r,n.d=function(e,r,o){n.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:o})},n.r=function(e){Object.defineProperty(e,"__esModule",{value:!0})},n.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(r,"a",r),r},n.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},n.p="",n(n.s="./src/main.js")}({"./lib/fetch/browser.js":
+/*!******************************!*\
+  !*** ./lib/fetch/browser.js ***!
+  \******************************/
+/*! exports provided: default */function(module,__webpack_exports__,__webpack_require__){"use strict";eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ('browser');\n\n//# sourceURL=webpack:///./lib/fetch/browser.js?")},"./node_modules/_react-dom@16.3.2@react-dom/index.js":
+/*!***************************************************************************************************!*\
+  !*** delegated ./node_modules/_react-dom@16.3.2@react-dom/index.js from dll-reference _dll_react ***!
+  \***************************************************************************************************/
+/*! no static exports found */function(module,exports,__webpack_require__){eval('module.exports = (__webpack_require__(/*! dll-reference _dll_react */ "dll-reference _dll_react"))(12);\n\n//# sourceURL=webpack:///delegated_./node_modules/_react-dom@16.3.2@react-dom/index.js_from_dll-reference__dll_react?')},"./node_modules/_react@16.3.2@react/cjs/react.production.min.js":
+/*!**************************************************************************************************************!*\
+  !*** delegated ./node_modules/_react@16.3.2@react/cjs/react.production.min.js from dll-reference _dll_react ***!
+  \**************************************************************************************************************/
+/*! no static exports found */function(module,exports,__webpack_require__){eval('module.exports = (__webpack_require__(/*! dll-reference _dll_react */ "dll-reference _dll_react"))(13);\n\n//# sourceURL=webpack:///delegated_./node_modules/_react@16.3.2@react/cjs/react.production.min.js_from_dll-reference__dll_react?')},"./src/main.js":
+/*!*********************!*\
+  !*** ./src/main.js ***!
+  \*********************/
+/*! no static exports found */function(module,exports,__webpack_require__){"use strict";eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/_react@16.3.2@react/cjs/react.production.min.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/_react-dom@16.3.2@react-dom/index.js\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _fetch = __webpack_require__(/*! fetch */ \"./lib/fetch/browser.js\");\n\nvar _fetch2 = _interopRequireDefault(_fetch);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconsole.log(_fetch2.default);\n\n// ReactDom.render(<h1>{name}</h1>, document.getElementById('root'));\n\n\n// require('bootstrap');\n// require('/Users/mzr/2018-study/nodejs/js/webpack-product/node_modules/bootstrap/dist/css/bootstrap.css');\n// require('./index.css')\n//\n// //会返回一个打包后的地址\n// let src = require('./images/thumb.png');\n// let img = new Image();\n// img.src = src;\n//\n// document.body.appendChild(img);\n// //\n// require('./less.less');\n// require('./sass.scss')\n//\n// console.log(name)\n//\n// let getColor = () => {\n//\n//     return name\n// }\n//\n// new Vue({\n//\n//     el: '#root',\n//     template:'<div><App/></div>',\n//     components:{App}\n// })\n\n// import lib from '../lib/lib';\n// console.log(lib)\n// import name from './color';\n// import App from './index.vue';\n// import Vue from 'vue';\n\n//# sourceURL=webpack:///./src/main.js?")},"dll-reference _dll_react":
+/*!*****************************!*\
+  !*** external "_dll_react" ***!
+  \*****************************/
+/*! no static exports found */function(module,exports){eval("module.exports = _dll_react;\n\n//# sourceURL=webpack:///external_%22_dll_react%22?")}});

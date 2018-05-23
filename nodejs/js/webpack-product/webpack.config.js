@@ -5,6 +5,8 @@ const webpack = require('webpack');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const HappyPack = require('happypack');
 
 let cssExtract = new ExtractTextWebpackPlugin('css/css.css');//传入的是打包后的文件名
 let lessExtract = new ExtractTextWebpackPlugin('css/less.css');
@@ -40,11 +42,17 @@ module.exports = {
     // devtool:'cheap-module-eval-source-map',//不会生成单独文件，只能定位到行
 
     resolve:{
+        //加载模块的时候，会到下面指定的目录查找
+        modules:['node_modules','./lib'],
+        //当加载的模块是包的时候，找的入口文件是package.josn里面的main字段，如果没有会依次找browser,node
+        mainFields:['main', 'browser', 'node'],
         //配置扩展名, 引入模块的时候可以不加扩展名,加载顺序从前往后
         extensions:[".js", ".json"],
         //配置别名，在js里面直接引用
         alias:{
-            "bootstrap":"bootstrap/dist/css/bootstrap.css"
+            react:'react/cjs/react.production.min.js',
+            "bootstrap":"bootstrap/dist/css/bootstrap.css",
+            vue: 'vue/dist/vue.js'
         }
     },
 
@@ -55,16 +63,29 @@ module.exports = {
         aggregateTimeout:500,//当改变文件的时候，会等500毫秒，如果这期间没有修改会执行新的打包
     },
     module: {
-
+        noParse:[/react\.production\.min\.js/],
         rules: [
             {
-                test: /\.js$/,
-                use:{
-                    loader:'babel-loader',
-                    query:{
-                            presets: ['env', 'stage-0', 'react']
-                    }
-                }
+                test: /\.jsx?$/,
+                // use:[
+                //     {
+                //         loader: 'babel-loader'
+                //     }
+                // ],
+                use:'happypack/loader?id=babel',
+
+                //只转换或者编译src目录下面的文件
+                include: path.join(__dirname,'./src'),
+                //不用解析node_modules
+                exclude:/node_modules/
+                // use:{
+                //     loader:'babel-loader',
+                //     // presets: ['env', 'stage-0', 'react']
+                //     // options:{
+                //     //     presets: ['env', 'stage-0', 'react']
+                //     // }
+                //
+                // }
             },
 
             {
@@ -114,6 +135,10 @@ module.exports = {
                 use: scssExtract.extract({
                     use: ['css-loader?minimize', 'sass-loader']
                 })
+            },
+            {
+                test: /\.vue$/,
+                use:'vue-loader'
             }
             // cnpm i less less-loader node-sass sass-loader -D
         ]
@@ -125,7 +150,7 @@ module.exports = {
         //     $:'jquery'
         // }),
 
-        new CleanWebpackPlugin([path.join(__dirname, 'dist')]),
+        // new CleanWebpackPlugin([path.join(__dirname, 'dist')]),
 
         //此插件可以自动产出html文件，默认保存在output.path指定的目录下面
         new HtmlWebpackPlugin({
@@ -163,9 +188,21 @@ module.exports = {
             to:path.join(__dirname, 'dist/public')//目标目录
         }]),
         new UglifyjsWebpackPlugin(),
+        new VueLoaderPlugin(),
+        //这个插件指的是想在这个配置文件里面引入另一个动态链接库，会找到mainfest指定的文件，通过这个文件找到里面的name属性对应的动态链接库,当加载库的时候，会到这个动态链接库里面看有没有，有的话直接加载，不需要编译，加快了编译速度；
+
+        // 当在业务模块里面引入react的时候，会先找manifest.json文件,看看里面有没有react模块，有的话，会找到对应的name属性(_dll_[name])，然后找到window._dll_[name]模块，从而拿到里面的编译过后的react(之所以能拿到是因为动态链接库编译了react，并且放到了window._dll_[name]属性上了),所以不用再次打包react，减少了编译的时间
+        new webpack.DllReferencePlugin({
+
+            manifest: path.join(__dirname, 'dist', 'manifest.json')
+        }),
         cssExtract,
         lessExtract,
-        scssExtract
+        scssExtract,
+        new HappyPack({
+            id: 'babel',
+            loaders: ['babel-loader']
+        })
     ],
 
     //配置静态服务器，可以预览打包后的项目

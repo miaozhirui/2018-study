@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="mvvm.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{a.a}}</p>
+    <p>{{c}}</p>
+    <p>{{b}}</p>
+    <input type="text" v-model="b">
+
+    <p>computed: {{hello}}</p>
+
+
+</div>
+
+<script>
+    let mzr = new Mzr({
+
+        el: '#app',
+        data: {
+            a :{
+                a: '是a',
+
+            },
+            //将data里面的属性都变成了Object.defineProperty()
+            b: '是bbbb',
+            c:'我是c',
+            d:'我是d'
+        },
+
+        //computed可以缓存，只是把数据挂在vm上
+        computed:{
+
+            hello: function () {
+
+                return this.b + this.c + this.d
+            }
+        }
+    })
+
+
+    //Object.defineProperty应用
+    //数据劫持Observer，将修改的数据变为get,set
+    //数据代理
+    //编译模板Compile
+    //发布订阅模式，将compile和Observer联系起来
+
+
+</script>
+</body>
+</html>
