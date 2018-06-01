@@ -1,0 +1,18 @@
+登录
+post /api/users/signup 注册
+post /api/users/signin 登录
+get /api/users/signout 登出
+
+分类列表
+get /api/categories 列表
+post /api/categories 增加
+put /api/categories/:id 编辑
+delete /api/categories/:删除
+
+文章列表
+get /ai/articles 列表
+post /api/articles 增加
+put /api/articles/:id 编辑
+delete /api/articles/:id删除
+get /api/articles/pv/:id 增加
+post /api/articles/:id 增加评论

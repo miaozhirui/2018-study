@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--居中的一个元素-->
+    <!--<TextView-->
+        <!--android:id="@+id/textview"-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="200dp"-->
+        <!--android:text="TextView(显示框）"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:textColor="@color/colorAccent"-->
+        <!--android:gravity="center"-->
+        <!--android:textSize="40px"-->
+        <!--android:textStyle="bold|italic"-->
+        <!--android:background="@color/colorBlack"/>-->
+
+    <!--带阴影的TextView-->
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:shadowColor="#F9F900"-->
+        <!--android:shadowRadius="3.0"-->
+        <!--android:shadowDx="10.0"-->
+        <!--android:shadowDy="10.0"-->
+        <!--android:text="带阴影的sahdow"-->
+        <!--android:textColor="#4A4AFF"-->
+        <!--android:textSize="30sp"/>-->
+
+    <!--带边框的TextView-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/textview1"-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="64dp"-->
+        <!--android:text="矩形边框的TextView"-->
+        <!--android:textSize="18sp"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:gravity="center"-->
+        <!--android:background="@drawable/text_rectborder"/>-->
+
+    <!--<TextView-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="64dp"-->
+        <!--android:text="圆角边框的TextView"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:gravity="center"-->
+        <!--android:background="@drawable/text_radiuborder"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:layout_below="@+id/textview1"/>-->
+
+    <!--添加图片的TextView-->
+    <!--<TextView-->
+        <!--android:id="@+id/textview1"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:text="张小子"-->
+        <!--android:drawableTop="@mipmap/my"-->
+        <!--android:drawableRight="@mipmap/home"-->
+        <!--android:drawableBottom="@mipmap/order_icon_selected"-->
+        <!--android:drawableLeft="@mipmap/lingdang"-->
+        <!--android:gravity="center"-->
+        <!--android:drawablePadding="10dp"-->
+        <!--/>-->
+
+    <!--使用autoLink属性识别链接链接类型-->
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="http://www.baidu.com"-->
+        <!--android:autoLink="web"/>-->
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="13913169273"-->
+        <!--android:autoLink="phone"-->
+        <!--android:gravity="center"/>-->
+
+    <!--玩转html-->
+    <!--<TextView-->
+        <!--android:id="@+id/textView1"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="你好啊"-->
+        <!--/>-->
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/txtOne"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="18sp"-->
+        <!--android:singleLine="true"-->
+        <!--android:ellipsize="marquee"-->
+        <!--android:marqueeRepeatLimit="marquee_forever"-->
+        <!--android:focusable="true"-->
+        <!--android:focusableInTouchMode="true"-->
+        <!--android:text="你整天说着日了狗日了狗，但是你却没有来，呵呵呵呵呵呵呵呵呵呵~"/>-->
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+
+        android:text="你好啊放假啊首付款讲述了飞机撒了房间爱老师傅就开始"/>
+</RelativeLayout>

@@ -51,7 +51,7 @@ public class HttpUtil {
 
                 while ((line = in.readLine()) != null) {
 
-                    result += "/n" + line;
+                    result += "" + line;
                 }
             } else {
 
@@ -131,6 +131,27 @@ public class HttpUtil {
 
             System.out.println("发送post请求出现异常！" + e);
             e.printStackTrace();
+        } finally {
+            try{
+                if(out !=null ) {
+
+                    out.close();
+                }
+
+                if(in != null) {
+                    in.close();
+                }
+
+
+            } catch (IOException ex) {
+
+                ex.printStackTrace();
+            }
+
+            if(conn != null) {
+
+                conn.disconnect();
+            }
         }
 
 
